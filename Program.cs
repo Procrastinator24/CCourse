@@ -2,7 +2,7 @@
 
 class Program
 {
-    
+
 
     static void Main()
     {
@@ -11,6 +11,7 @@ class Program
         double Tc = Convert.ToDouble(Console.ReadLine());
         double Tf = Tc * 9 / 5 + 32;
         Console.WriteLine(Tf);
+
 
 
         //Integer12
