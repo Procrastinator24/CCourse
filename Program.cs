@@ -8,9 +8,9 @@ class Program
     {
         //Begin32
         Console.WriteLine("Введите температуру по Цельсию:");
-        double t = Convert.ToDouble(Console.ReadLine());
-        double f = t * 9 / 5 + 32;
-        Console.WriteLine(f);
+        double Tc = Convert.ToDouble(Console.ReadLine());
+        double Tf = Tc * 9 / 5 + 32;
+        Console.WriteLine(Tf);
 
 
         //Integer12
@@ -25,9 +25,16 @@ class Program
         //Boolean34
 
         Console.WriteLine("Напишите координаты шахматной доски х у через пробел");
-        string[] a = Console.ReadLine().Split();
-        
-
+        string[] coordinates = Console.ReadLine().Split();
+        int sum = 0;
+        foreach(string c in coordinates)
+        {
+            sum+=Convert.ToInt32(c);
+        }
+        if (sum % 2 == 0) Console.WriteLine("Поле черное!");
+        else {
+            Console.WriteLine("Поле белое!");
+        }
 
 
     }
