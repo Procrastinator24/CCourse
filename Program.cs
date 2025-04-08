@@ -2,13 +2,24 @@
 
 class Program
 {
-    const double PI = 3.14159;
-    const double radius = 5.0;
+    
 
     static void Main()
     {
-        var area = PI*radius*radius;
-        Console.WriteLine($"Area of the circle: {area}");
+        //Begin32
+        Console.WriteLine("Введите температуру по Цельсию:");
+        double t = Convert.ToDouble(Console.ReadLine());
+        double f = t * 9 / 5 + 32;
+        Console.WriteLine(f);
+
+
+        //Integer12
+        Console.WriteLine("Введите трехзначное число:");
+        string digit =Console.ReadLine();
+        for (int i = digit.Length - 1; i!=-1; i--)
+        {
+            Console.Write(digit[i]);
+        }
 
 
 
