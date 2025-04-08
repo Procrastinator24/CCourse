@@ -22,6 +22,13 @@ class Program
         }
 
 
+        //Boolean34
+
+        Console.WriteLine("Напишите координаты шахматной доски х у через пробел");
+        string[] a = Console.ReadLine().Split();
+        
+
+
 
     }
 }
