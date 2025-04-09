@@ -5,10 +5,33 @@ using System.Linq;
 class Program
 {
     
+    public static bool IsWhite(string[] coordinates)
+    {
+        int sum = 0;
+        foreach (string c in coordinates)
+        {
+            sum += Convert.ToInt32(c);
+        }
+        if (sum % 2 == 0) return false;
+        else
+        {
+            return true;
+        }
+    }
+
+    public static string Reverse(string some)
+    {
+        string res = "";
+        for (int i = some.Length - 1; i != -1; i--)
+        {
+            res += some[i];
+        }
+        return res;
+    }
 
     static void Main()
     {
-        /*//Begin32
+        //Begin32
         Console.WriteLine("Введите температуру по Цельсию:");
         double Tc = Convert.ToDouble(Console.ReadLine());
         double Tf = Tc * 9 / 5 + 32;
@@ -17,94 +40,104 @@ class Program
 
         //Integer12
         Console.WriteLine("Введите трехзначное число:");
-        string digit =Console.ReadLine();
-        for (int i = digit.Length - 1; i!=-1; i--)
-        {
-            Console.Write(digit[i]);
-        }
+        Console.WriteLine(Reverse(Console.ReadLine())); 
+        
 
 
         //Boolean34
 
         Console.WriteLine("Напишите координаты шахматной доски х у через пробел");
         string[] coordinates = Console.ReadLine().Split();
-        int sum = 0;
-        foreach(string c in coordinates)
-        {
-            sum+=Convert.ToInt32(c);
-        }
-        if (sum % 2 == 0) Console.WriteLine("Поле черное!");
-        else {
-            Console.WriteLine("Поле белое!");
-        }
+        Console.WriteLine(IsWhite(coordinates)? "Черное":"Белое");
+       
 
         //If12
         Console.WriteLine("Введите 3 числа:");
         var arr = Console.ReadLine().Split(' ');
-        List<int> numbers = new List<int>();
-        foreach(string s in arr)
-        {
-            numbers.Add(Convert.ToInt32(s));
-
-        }
-        numbers.Sort();
-        Console.WriteLine(numbers[0]);
+        
+        Console.WriteLine(min(arr));
 
         // case1
         Console.WriteLine("Напишите число от 1 до 7");
-        switch (Convert.ToInt32(Console.ReadLine()))
-        {
-            case 1:
-                Console.WriteLine("Понедельник");
-                break;
-            case 2:
-                Console.WriteLine("Вторник");
-                break;
-            case 3:
-                Console.WriteLine("Среда");
-                break;
-            case 4:
-                Console.WriteLine("Четверг");
-                break;
-            case 5:
-                Console.WriteLine("Пятница");
-                break;
-            case 6:
-                Console.WriteLine("Суббота");
-                break;
-            case 7:
-                Console.WriteLine("Воскресенье");
-                break;
-        }
-*/
-        /*//for
+        Convert.ToInt32(Console.ReadLine());
+
+        //for
         Console.WriteLine("Напишите числа А и B");
         int[] AB = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToArray();
+        Sqrts(AB);
 
-        for(int a = AB[0]; a <= AB[1]; a++)
-        {
-            Console.Write(a*a + " | ");
-        }
-        Console.WriteLine();
+        
 
 
         //while15
-        int start = 1000;
+       
         Console.WriteLine("(0 < P < 25) P = ");
         int p = Convert.ToInt32(Console.Read());
-        int months = 0;
-        while (start <= 1100)
-        {
-            start += start * 25 / 100;
-            months += 1;
-        }
-        Console.WriteLine("Прошло " + months + " месяцев");*/
+        Console.WriteLine("Прошло " + MonthsPassed(p) + " месяцев");
 
         Proc();
         Console.WriteLine("Введите 10 чисел");
         double[] doubles = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(Double.Parse).ToArray();
         Console.WriteLine(SumM(doubles));
 
+    }
+
+    static public int min(string[] arr)
+    {
+        List<int> numbers = new List<int>();
+        foreach (string s in arr)
+        {
+            numbers.Add(Convert.ToInt32(s));
+        }
+        numbers.Sort();
+        return numbers[0];
+    }
+
+    static public string Day(int d)
+    {
+        switch (d<=7? d:d%7)
+        {
+            case 1:
+                return "Понедельник"; break;
+            case 2:
+                return "Вторник"; break;
+            case 3:
+                return "Среда"; break;
+            case 4:
+                return "Четверг"; break;
+            case 5:
+                return "Пятница"; break;
+            case 6:
+                return "Суббота"; break;
+            case 7:
+                return "Воскресенье";
+                break;
+            default:
+                return "Nothing";
+        }
+        
+
+    }
+
+    static public void Sqrts(int[] arr)
+    {
+        for (int a = arr[0]; a <= arr[1]; a++)
+        {
+            Console.Write(a * a + " | ");
+        }
+        Console.WriteLine();
+    }
+
+    static public int MonthsPassed(int percent)
+    {
+        int start = 1000;
+        int months = 0;
+        while (start <= 1100)
+        {
+            start += start * percent / 100;
+            months += 1;
+        }
+        return months;
     }
 
 
