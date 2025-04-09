@@ -83,8 +83,21 @@ class Program
 
         for(int a = AB[0]; a <= AB[1]; a++)
         {
-            Console.Write(a*a + " ");
+            Console.Write(a*a + " | ");
         }
+        Console.WriteLine();
 
+
+        //while15
+        int start = 1000;
+        Console.WriteLine("(0 < P < 25) P = ");
+        int p = Convert.ToInt32(Console.Read());
+        int months = 0;
+        while (start <= 1100)
+        {
+            start += start * 25 / 100;
+            months += 1;
+        }
+        Console.WriteLine("Прошло " + months + " месяцев");
     }
 }
