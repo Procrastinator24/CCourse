@@ -7,7 +7,7 @@ class Program
 
     static void Main()
     {
-        //Begin32
+        /*//Begin32
         Console.WriteLine("Введите температуру по Цельсию:");
         double Tc = Convert.ToDouble(Console.ReadLine());
         double Tf = Tc * 9 / 5 + 32;
@@ -47,6 +47,34 @@ class Program
 
         }
         numbers.Sort();
-        Console.WriteLine(numbers[0]);
+        Console.WriteLine(numbers[0]);*/
+
+        // case1
+        Console.WriteLine("Напишите число от 1 до 7");
+        switch (Convert.ToInt32(Console.ReadLine()))
+        {
+            case 1:
+                Console.WriteLine("Понедельник");
+                break;
+            case 2:
+                Console.WriteLine("Вторник");
+                break;
+            case 3:
+                Console.WriteLine("Среда");
+                break;
+            case 4:
+                Console.WriteLine("Четверг");
+                break;
+            case 5:
+                Console.WriteLine("Пятница");
+                break;
+            case 6:
+                Console.WriteLine("Суббота");
+                break;
+            case 7:
+                Console.WriteLine("Воскресенье");
+                break;
+        }
+
     }
 }
