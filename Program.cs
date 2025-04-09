@@ -100,12 +100,27 @@ class Program
         }
         Console.WriteLine("Прошло " + months + " месяцев");*/
 
+        Proc();
+        Console.WriteLine("Введите 10 чисел");
+        double[] doubles = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(Double.Parse).ToArray();
+        Console.WriteLine(SumM(doubles));
 
+    }
+
+
+    static public double SumM(double[] doubles)
+    {
+        return doubles.Sum(x => x);
+    }
+
+    static public void Proc()
+    {
         //Proc16
         Console.WriteLine("Введите А и В");
         double[] XY = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(Double.Parse).ToArray();
         Console.WriteLine(Sign(XY[0]) + Sign(XY[1]));
     }
+
     static int Sign(double x)
     {
         if (x < 0){return -1;}
