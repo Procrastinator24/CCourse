@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 class Program
 {
-
+    
 
     static void Main()
     {
@@ -11,7 +12,6 @@ class Program
         double Tc = Convert.ToDouble(Console.ReadLine());
         double Tf = Tc * 9 / 5 + 32;
         Console.WriteLine(Tf);
-
 
 
         //Integer12
@@ -37,6 +37,16 @@ class Program
             Console.WriteLine("Поле белое!");
         }
 
+        //If12
+        Console.WriteLine("Введите 3 числа:");
+        var arr = Console.ReadLine().Split(' ');
+        List<int> numbers = new List<int>();
+        foreach(string s in arr)
+        {
+            numbers.Add(Convert.ToInt32(s));
 
+        }
+        numbers.Sort();
+        Console.WriteLine(numbers[0]);
     }
 }
