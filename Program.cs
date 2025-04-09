@@ -77,7 +77,7 @@ class Program
                 break;
         }
 */
-        //for
+        /*//for
         Console.WriteLine("Напишите числа А и B");
         int[] AB = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToArray();
 
@@ -98,6 +98,18 @@ class Program
             start += start * 25 / 100;
             months += 1;
         }
-        Console.WriteLine("Прошло " + months + " месяцев");
+        Console.WriteLine("Прошло " + months + " месяцев");*/
+
+
+        //Proc16
+        Console.WriteLine("Введите А и В");
+        double[] XY = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(Double.Parse).ToArray();
+        Console.WriteLine(Sign(XY[0]) + Sign(XY[1]));
+    }
+    static int Sign(double x)
+    {
+        if (x < 0){return -1;}
+        else if (x > 1) { return 1; }
+        return 0;
     }
 }
