@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Program
 {
@@ -47,7 +48,7 @@ class Program
 
         }
         numbers.Sort();
-        Console.WriteLine(numbers[0]);*/
+        Console.WriteLine(numbers[0]);
 
         // case1
         Console.WriteLine("Напишите число от 1 до 7");
@@ -74,6 +75,15 @@ class Program
             case 7:
                 Console.WriteLine("Воскресенье");
                 break;
+        }
+*/
+        //for
+        Console.WriteLine("Напишите числа А и B");
+        int[] AB = Console.ReadLine().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToArray();
+
+        for(int a = AB[0]; a <= AB[1]; a++)
+        {
+            Console.Write(a*a + " ");
         }
 
     }
